@@ -3,13 +3,13 @@
 #
 
 # Build (or rebuild) using
-# docker build -t="jeffdavisco/tomcat-maven:latest" .
+# docker build -t="dockertutorial/tomcat-maven:latest" .
 
 # pull base image.
 FROM java:latest
 
 # maintainer details
-MAINTAINER Jeff Davis "jeffdavisco@gmail.com"
+MAINTAINER Ray Richardsons "raydaysha@gmail.com"
 
 # update packages and install maven
 RUN  \
@@ -29,10 +29,10 @@ RUN mkdir -p /local/git
 WORKDIR /local/git/
 
 # Install the test webapp
-RUN git clone https://github.com/dajevu/docker-maven-tomcat
-WORKDIR /local/git/docker-maven-tomcat
+RUN git clone https://github.com/raydaysha/DockerTutorialJavaMaven.git
+WORKDIR /local/git/DockerTutorialJavaMaven
 
-RUN chmod +x /local/git/docker-maven-tomcat/run.sh
+RUN chmod +x /local/git/DockerTutorialJavaMaven/run.sh
 # run startup script
 
 #CMD ["run.sh"]
